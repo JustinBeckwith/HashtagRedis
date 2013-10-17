@@ -1,0 +1,48 @@
+﻿@{
+    ViewBag.Title = "ResourceProvidR Home";
+}
+
+<header>
+    <div class="content-wrapper">
+        <div class="float-left">
+            <p class="site-title">
+                <a href="~/">ResourceProvidR</a></p>
+        </div>
+    </div>
+</header>
+<div id="body">
+    <section class="featured">
+        <div class="content-wrapper">
+            <hgroup class="title">
+                <h1>ResourceProvidR management</h1>
+            </hgroup>
+        </div>
+    </section>
+    <section class="content-wrapper main-content clear-fix">
+        <h1>@ViewBag.ResourceEntity.Name</h1>
+        <div>
+            <table>
+                <tr><td>Subscription ID:</td><td>@ViewBag.ResourceEntity.SubscriptionId</td></tr>
+                <tr><td>Cloud Service Name:</td><td>@ViewBag.ResourceEntity.CloudServiceName</td></tr>
+                <tr><td>Cloud Service Region:</td><td>@ViewBag.ResourceEntity.CloudServiceGeoRegion</td></tr>
+                <tr><td>ETag:</td><td>@ViewBag.ResourceEntity.ResourceETag</td></tr>
+                <tr><td>Plan:</td><td>@ViewBag.ResourceEntity.Plan</td></tr>
+                <tr><td>Promo Code:</td><td>@ViewBag.ResourceEntity.PromotionCode</td></tr>
+                <tr><td>Resource Type:</td><td>@ViewBag.ResourceEntity.Type</td></tr>
+                <tr><td>BillingETag:</td><td>@ViewBag.ResourceEntity.BillingETag</td></tr>
+                <tr><td>Last Operation:</td><td>@ViewBag.ResourceEntity.LastOperation</td></tr>
+            </table>
+        </div>
+        <form>
+            @*TODO: react to the catalog*@
+            <table>
+                <tr><td>Upload</td><td>Usage: <input type="text" value="1"/></td><td><input  type="button" value="Submit usage" /></td></tr>
+                <tr><td>Download</td><td>Usage: <input type="text" value="1"/></td><td><input type="button" value="Submit usage" /></td></tr>
+            </table>
+        </form>
+        <div>
+            <h3>Usage takes at least ONE hour before it is visible in Azure Data Market.</h3>
+            View aggregated usage in the <a href="">Azure Data Market Site</a> and provide BillingId = @ViewBag.ResourceEntity.BillingETag.
+        </div>
+    </section>
+</div>
