@@ -33,6 +33,7 @@ namespace redis.process
 
         public void Stop(RedisProcessInfo info)
         {
+            // here david.
             Process process = Process.GetProcesses().Where(p => p.Id == info.ProcessId).FirstOrDefault();
             if (process != null)
             {
