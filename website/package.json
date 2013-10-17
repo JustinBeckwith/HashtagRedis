@@ -1,0 +1,21 @@
+{
+    "name": "sitename",
+    "subdomain": "site",
+    "domains": [
+    "sitename.com",
+    "www.sitename.com"
+    ],
+    "scripts": {
+    },
+        "version": "0.0.1",
+        "engines": {
+        "node": "0.8.x"
+    },
+    "dependencies": {
+        "grunt": "~0.4.1",
+        "grunt-contrib-uglify": "~0.2.2",
+        "grunt-contrib-less": "~0.6.1",
+        "grunt-contrib-jshint": "~0.6.2",
+        "grunt-contrib-watch": "~0.4.4"
+    }
+}
