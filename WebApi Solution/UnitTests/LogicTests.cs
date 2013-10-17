@@ -43,5 +43,11 @@ namespace UnitTests
             manager.CreateInstance(instanceId);
             manager.DeleteInstance(instanceId);
         }
+
+        [TestMethod]
+        public void IsInstanceRunning()
+        {
+
+        }
     }
 }

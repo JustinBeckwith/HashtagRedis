@@ -39,9 +39,15 @@ namespace redis.api.Controllers
         {
             var details = JsonConvert.DeserializeObject<Dictionary<string, string>>(json);
 
-            // var status = BusinessLogic.GetStatus(details[RedisController.InstanceId]);
-
-            var response = this.Request.CreateResponse(HttpStatusCode.OK);
+            HttpResponseMessage response;
+            if (RedisController._manager.IsInstanceRunning(details[RedisController.InstanceId]))
+            {
+                response = this.Request.CreateResponse(HttpStatusCode.OK);
+            }
+            else
+            {
+                response = this.Request.CreateResponse(HttpStatusCode.NotFound);
+            }
 
             return response;
         }

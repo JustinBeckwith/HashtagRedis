@@ -14,7 +14,7 @@ namespace redis.logic
         {
             // Look for existing instance
             InstanceInfo info;
-            if (_database.TryGetValue(instanceId, out info))
+            if (this._database.TryGetValue(instanceId, out info))
             {
                 return info;
             }
@@ -34,14 +34,27 @@ namespace redis.logic
             {
                 Port = info.port,
             };
-            info.processId = _processManager.Spawn(details).ProcessId;
+            info.processId = this._processManager.Spawn(details).ProcessId;
 
             // Create connectionString
             info.connectionString = string.Format("redis://{0}:{1}@{2}:{3}/", info.instanceId, info.password, "hashtagredis.cloudapp.net", info.port);
 
             // Return instance
-            _database.TryAdd(instanceId, info); // false means it already existed; should be impossible
+            this._database.TryAdd(instanceId, info); // false means it already existed; should be impossible
             return info;
+        }
+
+        public bool IsInstanceRunning(string instanceId)
+        {
+            bool isRunning = false;
+
+            InstanceInfo info;
+            if (_database.TryGetValue(instanceId, out info))
+            {
+                isRunning = this._processManager.IsRunning(new RedisProcessInfo { ProcessId = info.processId });
+            }
+
+            return isRunning;
         }
 
         public void DeleteInstance(string instanceId)
@@ -49,8 +62,8 @@ namespace redis.logic
             InstanceInfo info;
             if (_database.TryGetValue(instanceId, out info))
             {
-                _processManager.Stop(new RedisProcessInfo { ProcessId = info.processId });
-                _database.TryRemove(instanceId, out info);
+                this._processManager.Stop(new RedisProcessInfo { ProcessId = info.processId });
+                this._database.TryRemove(instanceId, out info);
             }
         }
     }
