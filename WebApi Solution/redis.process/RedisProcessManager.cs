@@ -30,5 +30,14 @@ namespace redis.process
                 ProcessId = process.Id,
             };
         }
+
+        public void Stop(RedisProcessInfo info)
+        {
+            Process process = Process.GetProcesses().Where(p => p.Id == info.ProcessId).FirstOrDefault();
+            if (process != null)
+            {
+                process.Kill();
+            }
+        }
     }
 }
