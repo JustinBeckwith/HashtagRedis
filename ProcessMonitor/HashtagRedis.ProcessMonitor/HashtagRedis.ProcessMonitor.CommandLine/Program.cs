@@ -10,6 +10,12 @@ namespace HashtagRedis.ProcessMonitor.CommandLine
     {
         static void Main(string[] args)
         {
+            using (var host = new ProcessMontitorHost())
+            {
+                host.Start();
+
+                Console.ReadLine();
+            }
         }
     }
 }

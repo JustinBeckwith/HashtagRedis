@@ -43,6 +43,7 @@
     <Compile Include="IService.cs" />
     <Compile Include="IProcessTypeDescriptor.cs" />
     <Compile Include="ProcessMonitorService.cs" />
+    <Compile Include="ProcessMontitorHost.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Service.cs" />
   </ItemGroup>

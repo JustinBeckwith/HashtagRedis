@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HashtagRedis.ProcessMonitor
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HashtagRedis.ProcessMonitor.Redis", "HashtagRedis.ProcessMonitor.Redis\HashtagRedis.ProcessMonitor.Redis.csproj", "{BB25A94C-DC1D-4313-A92A-E331E5635DF0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HashtagRedis.ProcessMonitor.CommandLine", "HashtagRedis.ProcessMonitor.CommandLine\HashtagRedis.ProcessMonitor.CommandLine.csproj", "{932359BF-C503-4AD5-9573-109935AACBD3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -25,6 +27,10 @@ Global
 		{BB25A94C-DC1D-4313-A92A-E331E5635DF0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BB25A94C-DC1D-4313-A92A-E331E5635DF0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BB25A94C-DC1D-4313-A92A-E331E5635DF0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{932359BF-C503-4AD5-9573-109935AACBD3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{932359BF-C503-4AD5-9573-109935AACBD3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{932359BF-C503-4AD5-9573-109935AACBD3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{932359BF-C503-4AD5-9573-109935AACBD3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel.Composition.Hosting;
 using System.Diagnostics;
+using System.IO;
 
 namespace HashtagRedis.ProcessMonitor
 {
@@ -19,7 +20,7 @@ namespace HashtagRedis.ProcessMonitor
 
         public void Start()
         {
-            var catalog = new DirectoryCatalog(typeof(ProcessMonitorService).Assembly.Location);
+            var catalog = new DirectoryCatalog(Path.GetDirectoryName(typeof(ProcessMonitorService).Assembly.Location));
             var container = new CompositionContainer(catalog);
 
             var services = container.GetExportedValues<IService>();

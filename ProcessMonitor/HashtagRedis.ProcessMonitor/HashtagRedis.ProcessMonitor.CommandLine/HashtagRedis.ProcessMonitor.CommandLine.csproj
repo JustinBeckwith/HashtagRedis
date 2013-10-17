@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>e9d07058-53d0-462b-bd36-e91a2570e5fb</ProjectGuid>
+    <ProjectGuid>{932359BF-C503-4AD5-9573-109935AACBD3}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>HashtagRedis.ProcessMonitor.CommandLine</RootNamespace>
@@ -46,6 +46,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\HashtagRedis.ProcessMonitor.Framework\HashtagRedis.ProcessMonitor.Framework.csproj">
+      <Project>{9e1775a4-a0a9-44f2-a2fc-e253470c70f7}</Project>
+      <Name>HashtagRedis.ProcessMonitor.Framework</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
