@@ -1,9 +1,20 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.21005.1
-MinimumVisualStudioVersion = 10.0.40219.1
+# Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "redis.api", "redis.api\redis.api.csproj", "{7C9F9456-96CD-48D9-8C44-FFE3D3CE7F43}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "redis.process", "redis.process\redis.process.csproj", "{B822820E-3839-47D5-81CB-E3151A1F4E64}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{FE2162B2-7972-429C-80BC-B438F26FEE85}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.Config = .nuget\NuGet.Config
+		.nuget\NuGet.exe = .nuget\NuGet.exe
+		.nuget\NuGet.targets = .nuget\NuGet.targets
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "redis.logic", "redis.logic\redis.logic.csproj", "{A4CEC322-0187-4F11-A2C4-D6171E27886E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTests", "UnitTests\UnitTests.csproj", "{7EE6E5A0-72EF-4F27-9464-068239E36C8B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +26,18 @@ Global
 		{7C9F9456-96CD-48D9-8C44-FFE3D3CE7F43}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7C9F9456-96CD-48D9-8C44-FFE3D3CE7F43}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7C9F9456-96CD-48D9-8C44-FFE3D3CE7F43}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B822820E-3839-47D5-81CB-E3151A1F4E64}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B822820E-3839-47D5-81CB-E3151A1F4E64}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B822820E-3839-47D5-81CB-E3151A1F4E64}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B822820E-3839-47D5-81CB-E3151A1F4E64}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A4CEC322-0187-4F11-A2C4-D6171E27886E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A4CEC322-0187-4F11-A2C4-D6171E27886E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A4CEC322-0187-4F11-A2C4-D6171E27886E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A4CEC322-0187-4F11-A2C4-D6171E27886E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7EE6E5A0-72EF-4F27-9464-068239E36C8B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7EE6E5A0-72EF-4F27-9464-068239E36C8B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7EE6E5A0-72EF-4F27-9464-068239E36C8B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7EE6E5A0-72EF-4F27-9464-068239E36C8B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
