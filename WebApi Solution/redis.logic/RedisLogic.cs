@@ -26,6 +26,9 @@ namespace redis.logic
             // Get unique port
             info.port = (ushort)Interlocked.Increment(ref _nextPort);
 
+            // Create a unique password
+            info.password = "redpolo";
+
             // Create process
             var details = new RedisStartDetails
             {
@@ -34,7 +37,7 @@ namespace redis.logic
             info.processId = _processManager.Spawn(details).ProcessId;
 
             // Create connectionString
-            // TODO: info.connectionString = "redis://username:password@server:port/";
+            info.connectionString = string.Format("redis://{0}:{1}@{2}:{3}/", info.instanceId, info.password, "hashtagredis.cloudapp.net", info.port);
 
             // Return instance
             _table.TryAdd(instanceId, info); // false means it already existed; should be impossible
@@ -45,6 +48,7 @@ namespace redis.logic
     class InstanceInfo
     {
         public string instanceId { get; set; }
+        public string password { get; set; }
         public int processId { get; set; }
         public ushort port { get; set; }
         public string connectionString { get; set; }
