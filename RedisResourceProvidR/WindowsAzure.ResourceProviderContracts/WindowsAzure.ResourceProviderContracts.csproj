@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{1CEA2242-7C9E-4709-8F40-E88191C77823}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WindowsAzure.ResourceProviderContracts</RootNamespace>
+    <AssemblyName>WindowsAzure.ResourceProviderContracts</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.XML" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CloudServiceOutput.cs" />
+    <Compile Include="CloudServiceSettings.cs" />
+    <Compile Include="Constants.cs" />
+    <Compile Include="EntityEvent.cs" />
+    <Compile Include="EntityId.cs" />
+    <Compile Include="EntityPropertyCollection.cs" />
+    <Compile Include="EntityProperty.cs" />
+    <Compile Include="EntityState.cs" />
+    <Compile Include="EntityType.cs" />
+    <Compile Include="ErrorData.cs" />
+    <Compile Include="OperationResult.cs" />
+    <Compile Include="OperationStatus.cs" />
+    <Compile Include="OutputItem.cs" />
+    <Compile Include="OutputItemCollection.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ResourceInput.cs" />
+    <Compile Include="ResourceNameAvailability.cs" />
+    <Compile Include="ResourceOutput.cs" />
+    <Compile Include="ResourceOutputCollection.cs" />
+    <Compile Include="ResourceState.cs" />
+    <Compile Include="SsoToken.cs" />
+    <Compile Include="UsageMeter.cs" />
+    <Compile Include="UsageMeterCollection.cs" />
+    <Compile Include="Usage\MessageHeader.cs" />
+    <Compile Include="Usage\ReportUsageEvents.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
