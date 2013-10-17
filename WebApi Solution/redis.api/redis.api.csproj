@@ -107,6 +107,9 @@
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="..\..\BusinessLogic\BusinessLogic.cs">
+      <Link>BusinessLogic.cs</Link>
+    </Compile>
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\RedisController.cs" />
