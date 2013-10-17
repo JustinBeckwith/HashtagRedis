@@ -10,7 +10,7 @@ namespace redis.process
 {
     public class RedisProcessManager
     {
-        private static readonly string ExecutablePath = Path.Combine(Path.GetDirectoryName(typeof(RedisProcessManager).Assembly.Location), "redis-server.exe");
+        private static readonly string ExecutablePath = Path.Combine(@"c:\external", "redis-server.exe");
         
         public RedisProcessInfo Spawn(RedisStartDetails details)
         {
