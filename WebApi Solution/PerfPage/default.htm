@@ -7,11 +7,17 @@
     <title>Hashtag Redis Perf</title>
 </head>
 <body>
-    <section>
+    <section class="section-perf">
         <div class="content">
             <h1>Hashtag Redis Perf</h1>
-            <div class="perf-output">stuff goes here</div>
-            <input id="runtests" type="button" value="Run test" />
+            <ul id="perfOutput" class="section-perf-output">
+                <li><span class='icon-info-sign'></span>Message text will look like this!</li>
+            </ul>
+            <input type="text" id="serverThing" value="Server Thing Here" />
+            <div class="section-perf-buttons">
+                <a href="#" id="runTestRedis" class="btn">Run (Awesome) Redis Test!</a>
+                <a href="#" id="runOtherRedis" class="btn">Run (Lame) Other Test!</a>
+            </div>
         </div>
     </section>
 
@@ -22,13 +28,20 @@
         $(function () {
             var hub = $.connection.myHub;
 
-            $("#runtests").click(function () {
+            $("#runTestRedis").click(function (evt) {
+                evt.preventDefault();
                 hub.server.redisTests();
                 // hub.server.otherTests();
             });
 
+            $("#runOtherRedis").click(function (evt) {
+                evt.preventDefault();
+                // hub.server.otherTests();
+            });
+
             hub.client.showmessage = function (message) {
-                alert(message);
+                // alert(message);
+                $("#perfOutput").append("<li><span class='icon-info-sign'></span>" + message + "</li>");
             };
 
             $.connection.hub.start();
