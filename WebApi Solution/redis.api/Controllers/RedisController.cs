@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
@@ -11,7 +12,15 @@ namespace redis.api.Controllers
     {
         public HttpResponseMessage Post(ProvisioningDetails details)
         {
+            string[] args = {}; //todo: init from details
+            string redis_server_path = "redis-server";
+            var pi = new Process(); // todo: pass redis config file
+            var p = Process.Start(redis_server_path, String.Join(" ", args));
             
+            // assuming starting the porcess was succesful 
+            // store the userid, portid, processid into table storage
+            // build url
+            // return url
         }
 
         public HttpResponseMessage Delete(string instance)
@@ -20,7 +29,7 @@ namespace redis.api.Controllers
             return response;
         }
 
-        public HttpResponseMessage Get(string instance)
+        public HttpResponseMessage Get(ProvisioningDetails details)
         {
             
         }
