@@ -7,14 +7,14 @@ namespace redis.logic
     public class Manager
     {
         private RedisProcessManager _processManager = new RedisProcessManager();
-        private ConcurrentDictionary<string, InstanceInfo> _table = new ConcurrentDictionary<string, InstanceInfo>();
+        private ConcurrentDictionary<string, InstanceInfo> _database = new ConcurrentDictionary<string, InstanceInfo>();
         private long _lastPort = 2000;
 
         public InstanceInfo CreateInstance(string instanceId)
         {
             // Look for existing instance
             InstanceInfo info;
-            if (_table.TryGetValue(instanceId, out info))
+            if (_database.TryGetValue(instanceId, out info))
             {
                 return info;
             }
@@ -40,8 +40,18 @@ namespace redis.logic
             info.connectionString = string.Format("redis://{0}:{1}@{2}:{3}/", info.instanceId, info.password, "hashtagredis.cloudapp.net", info.port);
 
             // Return instance
-            _table.TryAdd(instanceId, info); // false means it already existed; should be impossible
+            _database.TryAdd(instanceId, info); // false means it already existed; should be impossible
             return info;
+        }
+
+        public void DeleteInstance(string instanceId)
+        {
+            InstanceInfo info;
+            if (_database.TryGetValue(instanceId, out info))
+            {
+                _processManager.Stop(new RedisProcessInfo { ProcessId = info.processId });
+                _database.TryRemove(instanceId, out info);
+            }
         }
     }
 

@@ -34,5 +34,14 @@ namespace UnitTests
             Assert.AreNotEqual(0, instanceB.processId);
             Assert.AreEqual("redis://" + instanceId + ":redpolo@hashtagredis.cloudapp.net:2001/", instanceB.connectionString);
         }
+
+        [TestMethod]
+        public void DeleteInstance()
+        {
+            var manager = new Manager();
+            var instanceId = "testInstance";
+            manager.CreateInstance(instanceId);
+            manager.DeleteInstance(instanceId);
+        }
     }
 }
