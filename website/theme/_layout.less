@@ -61,34 +61,64 @@ section {
 }
 
 .pricing-badge {
+    background-color: @htr-white;
+    border: 1px solid darken(@htr-white, 5);
     display: block;
     float: left;
-    padding: 20px 4%;
+    margin: 0 1.5%;
+    padding: 19px 2%;
+    position: relative;
     width: 25.333%;
 
-    p { 
-        line-height: 1.4em;
-        margin: 32px 0; 
-    }
-
-    h4 { 
-        margin: 30px 0;
+    h3 {
+        color: @htr-grey-dark;
+        margin-bottom: 39px;
         text-align: center; 
     }
 
-    .feature-badge-icon {
-        background-color: @htr-grey;
-        display: block;
-        height: 240px;
+    ul {
+        margin: 20px 0;
+
+        li {
+            padding: 8px 20px;
+        }
+
+        li:nth-child(odd) {
+            background-color: @htr-grey-light;
+        }
+    }
+
+    .btn { 
+        padding-left: 0;
+        padding-right: 0;
         text-align: center;
-        width: 240px;
-        .rounded-corners(120px);
+        width: 243px; 
+    }
+
+    .pricing-soon {
+        background-color: rgba(255, 255, 255, 0.65);
+        display: block;
+        font-size: 28px;
+        height: 100%;
+        left: 0;
+        position: absolute;
+        text-align: center;
+        top: 0;
+        width: 100%;
 
         span { 
-            color: @htr-red;
-            display: inline-block;
-            font-size: 150px; 
-            margin-top: 40px;
+            display: block;
+            margin-top: 220px; 
         }
+    }
+
+    .pricing-badge-price {
+        border-bottom: 1px solid @htr-grey;
+        border-top: 1px solid @htr-grey;
+        display: block;
+        font-size: 26px;
+        padding: 10px 0;
+        text-align: center;
+        width: 100%;
     }
 }
