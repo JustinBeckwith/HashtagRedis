@@ -1,9 +1,11 @@
 .group:after{content:"";display:table;clear:both}
 body{font-family:"Segoe UI Light","Segoe UI";font-size:18px}
 p{line-height:1.2em;margin:.3em 0}p.mission-statement{line-height:1.4em;margin:.6em 0;width:460px}
-h1{font-family:"Segoe UI Light","Segoe UI";font-size:40px;line-height:1.0em;margin:.4em 0}h1.logo{background:url(../img/polo.png) transparent 0 0 no-repeat;font-size:60px;height:85px;line-height:80px;margin:.3em 0;padding-left:100px}
+h1{font-family:"Segoe UI Light","Segoe UI";font-size:40px;line-height:1.0em;margin:.4em 0}
 h2{font-family:"Segoe UI Light","Segoe UI";font-size:50px;line-height:1.0em;margin:.4em 0}
+h3{font-family:"Segoe UI Light","Segoe UI";font-size:30px;line-height:1.0em;margin:.4em 0}
 h4{font-family:"Segoe UI Light","Segoe UI";font-size:24px;line-height:1.0em;margin:.4em 0}
+.logo{background:url(../img/polo.png) transparent 0 0 no-repeat;color:#fff;display:block;font-family:"Segoe UI Light","Segoe UI";font-size:60px;height:85px;line-height:80px;margin:.3em 0;padding-left:100px;text-decoration:none}
 .text-red{color:#d82a20}
 section{padding:40px 0}
 .section-red{background-color:#d82a20;color:#fff}
@@ -14,10 +16,14 @@ section{padding:40px 0}
 .feature-badge{display:block;float:left;padding:20px 4%;width:25.333%}.feature-badge p{line-height:1.4em;margin:32px 0}
 .feature-badge h4{margin:30px 0;text-align:center}
 .feature-badge .feature-badge-icon{background-color:#ccc;display:block;height:240px;text-align:center;width:240px;-moz-border-radius:120px;-webkit-border-radius:120px;border-radius:120px}.feature-badge .feature-badge-icon span{color:#d82a20;display:inline-block;font-size:150px;margin-top:40px}
-.pricing-badge{display:block;float:left;padding:20px 4%;width:25.333%}.pricing-badge p{line-height:1.4em;margin:32px 0}
-.pricing-badge h4{margin:30px 0;text-align:center}
-.pricing-badge .feature-badge-icon{background-color:#ccc;display:block;height:240px;text-align:center;width:240px;-moz-border-radius:120px;-webkit-border-radius:120px;border-radius:120px}.pricing-badge .feature-badge-icon span{color:#d82a20;display:inline-block;font-size:150px;margin-top:40px}
+.pricing-badge{background-color:#fff;border:1px solid #f2f2f2;display:block;float:left;margin:0 1.5%;padding:19px 2%;position:relative;width:25.333%}.pricing-badge h3{color:#999;margin-bottom:39px;text-align:center}
+.pricing-badge ul{margin:20px 0}.pricing-badge ul li{padding:8px 20px}
+.pricing-badge ul li:nth-child(odd){background-color:#efefef}
+.pricing-badge .btn{padding-left:0;padding-right:0;text-align:center;width:243px}
+.pricing-badge .pricing-soon{background-color:rgba(255,255,255,0.65);display:block;font-size:28px;height:100%;left:0;position:absolute;text-align:center;top:0;width:100%}.pricing-badge .pricing-soon span{display:block;margin-top:220px}
+.pricing-badge .pricing-badge-price{border-bottom:1px solid #ccc;border-top:1px solid #ccc;display:block;font-size:26px;padding:10px 0;text-align:center;width:100%}
 .section-main{background:url(../img/scott-guthrie-blur.jpg) 100% 0;color:#fff;min-height:500px}.section-main .content{position:relative}.section-main .content .btn{left:0;position:absolute;top:350px}
+.section-main .logo,.section-main .mission-statement{text-shadow:0 0 10px #333}
 .section-main-short{background:url(../img/scott-guthrie-blur.jpg) 100% 0;color:#fff;min-height:100px}.section-main-short .content{position:relative}
 .section-promise p{margin:1em 0}
 .menu{position:absolute;right:40px;top:20px}.menu li{float:left;margin:0 10px}.menu li a{color:#fff;display:block;padding:.2em;text-decoration:none;text-transform:uppercase}
