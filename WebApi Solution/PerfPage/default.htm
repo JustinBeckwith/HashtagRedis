@@ -40,7 +40,7 @@
 
             hub.client.showmessage = function (message) {
                 // alert(message);
-                $("#perfOutput").prepend("<li><span class='icon-info-sign'></span>" + message + "</li>");
+                $("#perfOutput").append("<li><span class='icon-info-sign'></span>" + message + "</li>");
             };
 
             $.connection.hub.start();
