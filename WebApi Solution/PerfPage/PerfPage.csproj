@@ -87,6 +87,7 @@
     </Reference>
     <Reference Include="ServiceStack.Text">
       <HintPath>..\packages\ServiceStack.Text.3.9.67\lib\net35\ServiceStack.Text.dll</HintPath>
+    </Reference>
     <Reference Include="System.Data.Services.Client" />
     <Reference Include="System.Spatial, Version=5.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Spatial.5.2.0\lib\net40\System.Spatial.dll</HintPath>
@@ -109,14 +110,11 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-<<<<<<< Updated upstream
     <Content Include="packages.config" />
-=======
     <Content Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </Content>
->>>>>>> Stashed changes
     <None Include="Scripts\jquery-1.8.2.intellisense.js" />
     <Content Include="css\site.min.css" />
     <Content Include="default.htm" />
@@ -170,11 +168,7 @@
       </FlavorProperties>
     </VisualStudio>
   </ProjectExtensions>
-<<<<<<< Updated upstream
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
-=======
-  <Import Project="$(SolutionDir)\.nuget\nuget.targets" />
->>>>>>> Stashed changes
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
