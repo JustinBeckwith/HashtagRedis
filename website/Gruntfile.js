@@ -24,7 +24,8 @@
                         compress: true
                     },
                     files: {
-                         "css/site.min.css": "theme/site.less"
+                         "css/site.min.css": "theme/site.less",
+                         "C:/git/HashtagRedis/WebApi Solution/PerfPage/css/site.min.css": "theme/site.less"
                     }
                 }
             },
