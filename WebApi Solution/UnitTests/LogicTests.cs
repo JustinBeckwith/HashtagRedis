@@ -43,5 +43,12 @@ namespace UnitTests
             manager.CreateInstance(instanceId);
             manager.DeleteInstance(instanceId);
         }
+
+        [TestMethod]
+        public void IsInstanceNotRunning()
+        {
+            var manager = new Manager();
+            Assert.IsFalse(manager.IsInstanceRunning("thisInstanceDoesntExist"));
+        }
     }
 }

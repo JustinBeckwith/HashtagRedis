@@ -19,7 +19,7 @@ namespace redis.api.Controllers
         public HttpResponseMessage Provision(string json)
         {
             var details = JsonConvert.DeserializeObject<Dictionary<string, string>>(json);
-            var instanceInfo = _manager.CreateInstance(details[RedisController.InstanceId]);
+            var instanceInfo = RedisController._manager.CreateInstance(details[RedisController.InstanceId]);
             return this.Request.CreateResponse(HttpStatusCode.Created, instanceInfo.connectionString);
         }
 
@@ -29,7 +29,7 @@ namespace redis.api.Controllers
             var details = JsonConvert.DeserializeObject<Dictionary<string, string>>(json);
             var response = this.Request.CreateResponse(HttpStatusCode.NoContent);
 
-            // BusinessLogic.DeleteInstance(details[RedisController.InstanceId]);
+            RedisController._manager.DeleteInstance(details[RedisController.InstanceId]);
 
             return response;
         }
@@ -39,9 +39,15 @@ namespace redis.api.Controllers
         {
             var details = JsonConvert.DeserializeObject<Dictionary<string, string>>(json);
 
-            // var status = BusinessLogic.GetStatus(details[RedisController.InstanceId]);
-
-            var response = this.Request.CreateResponse(HttpStatusCode.OK);
+            HttpResponseMessage response;
+            if (RedisController._manager.IsInstanceRunning(details[RedisController.InstanceId]))
+            {
+                response = this.Request.CreateResponse(HttpStatusCode.OK);
+            }
+            else
+            {
+                response = this.Request.CreateResponse(HttpStatusCode.NotFound);
+            }
 
             return response;
         }
