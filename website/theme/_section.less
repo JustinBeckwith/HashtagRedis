@@ -28,3 +28,30 @@
 .section-promise {
     p { margin: 1em 0; }
 }
+
+.section-perf {
+    .section-perf-output {
+        li {
+            background-color: @htr-grey;
+            border-bottom: 1px solid darken(@htr-grey, 20);
+            border-right: 1px solid darken(@htr-grey, 20);
+            color: @htr-black;
+            display: block;
+            padding: 10px 20px 10px 60px;
+            position: relative;
+
+            [class^="icon-"] {
+                color: @htr-grey-dark;
+                font-size: 30px;
+                position: absolute;
+                left: 10px;
+                top: 4px;
+            }
+        }
+    }
+    .section-perf-buttons {
+        margin-top: 80px;
+        text-align: center;
+        width: 100%;
+    }
+}
