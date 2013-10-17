@@ -11,7 +11,6 @@
         <div class="content">
             <h1>Hashtag Redis Perf</h1>
             <ul id="perfOutput" class="section-perf-output">
-                <li><span class='icon-info-sign'></span>Message text will look like this!</li>
             </ul>
             <input type="text" id="serverThing" value="Server Thing Here" />
             <div class="section-perf-buttons">
@@ -41,7 +40,7 @@
 
             hub.client.showmessage = function (message) {
                 // alert(message);
-                $("#perfOutput").append("<li><span class='icon-info-sign'></span>" + message + "</li>");
+                $("#perfOutput").prepend("<li><span class='icon-info-sign'></span>" + message + "</li>");
             };
 
             $.connection.hub.start();
