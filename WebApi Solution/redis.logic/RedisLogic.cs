@@ -1,6 +1,8 @@
 ﻿using redis.process;
+using System.Linq;
 using System.Collections.Concurrent;
 using System.Threading;
+using System.Collections.Generic;
 
 namespace redis.logic
 {
@@ -66,11 +68,23 @@ namespace redis.logic
                 this._database.TryRemove(instanceId, out info);
             }
         }
+
+        public IEnumerable<PublicInstanceInfo> GetAllInstances()
+        {
+            var query = from instance in this._database.Values
+                        select new PublicInstanceInfo { instanceId = instance.instanceId };
+
+            return query;
+        }
     }
 
-    public class InstanceInfo
+    public class PublicInstanceInfo
     {
         public string instanceId { get; set; }
+    }
+
+    public class InstanceInfo : PublicInstanceInfo
+    {
         public string password { get; set; }
         public int processId { get; set; }
         public ushort port { get; set; }

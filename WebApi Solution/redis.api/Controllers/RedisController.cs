@@ -51,5 +51,13 @@ namespace redis.api.Controllers
 
             return response;
         }
+
+        [HttpGet]
+        public HttpResponseMessage GetAllInstances()
+        {
+            var listOfInstances = RedisController._manager.GetAllInstances();
+
+            return this.Request.CreateResponse(HttpStatusCode.OK, listOfInstances);
+        }
     }
 }
