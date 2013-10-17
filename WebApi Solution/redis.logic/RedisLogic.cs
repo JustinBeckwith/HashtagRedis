@@ -8,7 +8,7 @@ namespace redis.logic
     {
         private RedisProcessManager _processManager = new RedisProcessManager();
         private ConcurrentDictionary<string, InstanceInfo> _database = new ConcurrentDictionary<string, InstanceInfo>();
-        private long _lastPort = 2000;
+        private long _lastPort = 10000;
 
         public InstanceInfo CreateInstance(string instanceId)
         {
