@@ -29,7 +29,7 @@
 
             $("#runTestRedis").click(function (evt) {
                 evt.preventDefault();
-                hub.server.redisTests();
+                hub.server.redisTests("angler.redistogo.com:9313");
                 // hub.server.otherTests();
             });
 
