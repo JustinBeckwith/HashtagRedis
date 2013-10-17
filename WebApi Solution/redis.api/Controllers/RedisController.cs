@@ -6,7 +6,6 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using Newtonsoft.Json;
-using HashtagRedis;
 
 namespace redis.api.Controllers
 {
@@ -18,7 +17,7 @@ namespace redis.api.Controllers
         public HttpResponseMessage Provision(string json)
         {
             var details = JsonConvert.DeserializeObject<Dictionary<string, string>>(json);
-            var instanceInfo = BusinessLogic.CreateInstance(details[RedisController.InstanceId]);
+            var instanceInfo = redis.logic.Manager.CreateInstance(details[RedisController.InstanceId]);
             return this.Request.CreateResponse(HttpStatusCode.Created, instanceInfo.connectionString);
         }
 

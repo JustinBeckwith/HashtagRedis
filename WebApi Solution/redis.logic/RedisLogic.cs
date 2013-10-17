@@ -4,7 +4,7 @@ using System.Threading;
 
 namespace redis.logic
 {
-    static class Manager
+    public static class Manager
     {
         private static RedisProcessManager _processManager = new RedisProcessManager();
         private static ConcurrentDictionary<string, InstanceInfo> _table = new ConcurrentDictionary<string, InstanceInfo>();
@@ -42,7 +42,7 @@ namespace redis.logic
         }
     }
 
-    class InstanceInfo
+    public class InstanceInfo
     {
         public string instanceId { get; set; }
         public int processId { get; set; }
