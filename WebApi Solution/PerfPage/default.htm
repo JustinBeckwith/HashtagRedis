@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>PerfPage</title>
+</head>
+<body>
+    <p>Title here</p>
+    <input id="runtests" type="button" value="Run test" />
+
+    <script src="Scripts/jquery-1.8.2.min.js"></script>
+    <script src="Scripts/jquery.signalR-1.0.0.js"></script>
+    <script src="signalr/hubs"></script>
+    <script>
+        $(function () {
+            var hub = $.connection.myHub;
+
+            $("#runtests").click(function () {
+                hub.server.redisTests();
+                // hub.server.otherTests();
+            });
+
+            hub.client.showmessage = function (message) {
+                alert(message);
+            };
+
+            $.connection.hub.start();
+        });
+    </script>
+
+</body>
+</html>
