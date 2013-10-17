@@ -45,9 +45,10 @@ namespace UnitTests
         }
 
         [TestMethod]
-        public void IsInstanceRunning()
+        public void IsInstanceNotRunning()
         {
-
+            var manager = new Manager();
+            Assert.IsFalse(manager.IsInstanceRunning("thisInstanceDoesntExist"));
         }
     }
 }
