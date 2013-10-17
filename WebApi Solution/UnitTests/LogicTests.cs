@@ -15,9 +15,9 @@ namespace UnitTests
             Assert.IsNotNull(instance);
             Assert.AreEqual(instanceId, instance.instanceId);
             Assert.AreEqual("redpolo", instance.password);
-            Assert.AreEqual(2001, instance.port);
+            Assert.AreEqual(10001, instance.port);
             Assert.AreNotEqual(0, instance.processId);
-            Assert.AreEqual("redis://" + instanceId + ":redpolo@hashtagredis.cloudapp.net:2001/", instance.connectionString);
+            Assert.AreEqual("redis://" + instanceId + ":redpolo@hashtagredis.cloudapp.net:10001/", instance.connectionString);
         }
 
         [TestMethod]
@@ -30,9 +30,9 @@ namespace UnitTests
             Assert.IsNotNull(instanceB);
             Assert.AreEqual(instanceId, instanceB.instanceId);
             Assert.AreEqual("redpolo", instanceB.password);
-            Assert.AreEqual(2001, instanceB.port);
+            Assert.AreEqual(10001, instanceB.port);
             Assert.AreNotEqual(0, instanceB.processId);
-            Assert.AreEqual("redis://" + instanceId + ":redpolo@hashtagredis.cloudapp.net:2001/", instanceB.connectionString);
+            Assert.AreEqual("redis://" + instanceId + ":redpolo@hashtagredis.cloudapp.net:10001/", instanceB.connectionString);
         }
 
         [TestMethod]
