@@ -8,7 +8,7 @@ namespace redis.logic
     {
         private static RedisProcessManager _processManager = new RedisProcessManager();
         private static ConcurrentDictionary<string, InstanceInfo> _table = new ConcurrentDictionary<string, InstanceInfo>();
-        private static long _nextPort = 2000;
+        private static long _lastPort = 2000;
 
         public static InstanceInfo CreateInstance(string instanceId)
         {
@@ -24,7 +24,7 @@ namespace redis.logic
             info.instanceId = instanceId;
 
             // Get unique port
-            info.port = (ushort)Interlocked.Increment(ref _nextPort);
+            info.port = (ushort)Interlocked.Increment(ref _lastPort);
 
             // Create a unique password
             info.password = "redpolo";
