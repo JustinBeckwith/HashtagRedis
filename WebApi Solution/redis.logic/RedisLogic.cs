@@ -4,13 +4,13 @@ using System.Threading;
 
 namespace redis.logic
 {
-    public static class Manager
+    public class Manager
     {
-        private static RedisProcessManager _processManager = new RedisProcessManager();
-        private static ConcurrentDictionary<string, InstanceInfo> _table = new ConcurrentDictionary<string, InstanceInfo>();
-        private static long _lastPort = 2000;
+        private RedisProcessManager _processManager = new RedisProcessManager();
+        private ConcurrentDictionary<string, InstanceInfo> _table = new ConcurrentDictionary<string, InstanceInfo>();
+        private long _lastPort = 2000;
 
-        public static InstanceInfo CreateInstance(string instanceId)
+        public InstanceInfo CreateInstance(string instanceId)
         {
             // Look for existing instance
             InstanceInfo info;

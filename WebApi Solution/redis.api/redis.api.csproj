@@ -107,9 +107,6 @@
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\..\BusinessLogic\BusinessLogic.cs">
-      <Link>BusinessLogic.cs</Link>
-    </Compile>
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\RedisController.cs" />
@@ -128,7 +125,12 @@
       <DependentUpon>Web.config</DependentUpon>
     </Content>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\redis.logic\redis.logic.csproj">
+      <Project>{a4cec322-0187-4f11-a2c4-d6171e27886e}</Project>
+      <Name>redis.logic</Name>
+    </ProjectReference>
+  </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
   </ItemGroup>
