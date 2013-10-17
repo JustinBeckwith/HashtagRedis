@@ -40,6 +40,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ProcessMonitorHostExtensions.cs" />
+    <Compile Include="RedisProcessInfo.cs" />
     <Compile Include="RedisProcessTypeDescriptor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RedisProxyService.cs" />

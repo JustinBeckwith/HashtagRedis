@@ -52,6 +52,10 @@
       <Project>{9e1775a4-a0a9-44f2-a2fc-e253470c70f7}</Project>
       <Name>HashtagRedis.ProcessMonitor.Framework</Name>
     </ProjectReference>
+    <ProjectReference Include="..\HashtagRedis.ProcessMonitor.Redis\HashtagRedis.ProcessMonitor.Redis.csproj">
+      <Project>{bb25a94c-dc1d-4313-a92a-e331e5635df0}</Project>
+      <Name>HashtagRedis.ProcessMonitor.Redis</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
