@@ -21,6 +21,8 @@ namespace redis.process
                 arguments.AppendFormat(" --port {0}", details.Port);
             }
 
+            arguments.AppendFormat(" --requirepass {0}", "redpolo");
+
             Process process = new Process();
             process.StartInfo = new ProcessStartInfo(ExecutablePath, arguments.ToString());
 
