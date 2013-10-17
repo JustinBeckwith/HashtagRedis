@@ -5,38 +5,44 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using Newtonsoft.Json;
+using HashtagRedis;
 
 namespace redis.api.Controllers
 {
     public class RedisController : ApiController
     {
-        public HttpResponseMessage Post(ProvisioningDetails details)
+        private const string InstanceId = "instanceId";
+
+        [HttpPost]
+        public HttpResponseMessage Provision(string json)
         {
-            string[] args = {}; //todo: init from details
-            string redis_server_path = "redis-server";
-            var pi = new Process(); // todo: pass redis config file
-            var p = Process.Start(redis_server_path, String.Join(" ", args));
-            
-            // assuming starting the porcess was succesful 
-            // store the userid, portid, processid into table storage
-            // build url
-            // return url
+            var details = JsonConvert.DeserializeObject<Dictionary<string, string>>(json);
+            var instanceInfo = BusinessLogic.CreateInstance(details[RedisController.InstanceId]);
+            return this.Request.CreateResponse(HttpStatusCode.Created, instanceInfo.connectionString);
         }
 
-        public HttpResponseMessage Delete(string instance)
+        [HttpDelete]
+        public HttpResponseMessage Delete(string json)
         {
-            var response = this.Request.CreateResponse(HttpStatusCode.OK, "super");
+            var details = JsonConvert.DeserializeObject<Dictionary<string, string>>(json);
+            var response = this.Request.CreateResponse(HttpStatusCode.NoContent);
+
+            // BusinessLogic.DeleteInstance(details[RedisController.InstanceId]);
+
             return response;
         }
 
-        public HttpResponseMessage Get(ProvisioningDetails details)
+        [HttpGet]
+        public HttpResponseMessage GetStatus(string json)
         {
-            
-        }
-    }
+            var details = JsonConvert.DeserializeObject<Dictionary<string, string>>(json);
 
-    public class ProvisioningDetails
-    {
-        
+            // var status = BusinessLogic.GetStatus(details[RedisController.InstanceId]);
+
+            var response = this.Request.CreateResponse(HttpStatusCode.OK);
+
+            return response;
+        }
     }
 }
