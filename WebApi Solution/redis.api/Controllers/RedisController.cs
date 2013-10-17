@@ -9,6 +9,25 @@ namespace redis.api.Controllers
 {
     public class RedisController : ApiController
     {
+        public HttpResponseMessage Post(ProvisioningDetails details)
+        {
+            
+        }
+
+        public HttpResponseMessage Delete(string instance)
+        {
+            var response = this.Request.CreateResponse(HttpStatusCode.OK, "super");
+            return response;
+        }
+
+        public HttpResponseMessage Get(string instance)
+        {
+            
+        }
+    }
+
+    public class ProvisioningDetails
+    {
         
     }
 }
