@@ -40,7 +40,7 @@ namespace WindowsAzure.ResourceProviderDataLayer
 
                             return new ProvisioningResult()
                             {
-                                CacheUrl = readTheContentTask.Result
+                                CacheUrl = JsonConvert.DeserializeObject<string>(readTheContentTask.Result)
                             };
                         }
                         else

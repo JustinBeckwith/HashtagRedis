@@ -21,7 +21,6 @@ namespace ResourceProvidR.Controllers
             if (resourceEntity != null)
             {
                 ViewBag.ResourceEntity = resourceEntity;
-
                 return View();
             }
             else
