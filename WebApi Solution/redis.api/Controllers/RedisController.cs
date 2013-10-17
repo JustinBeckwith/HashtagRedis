@@ -19,7 +19,7 @@ namespace redis.api.Controllers
         public HttpResponseMessage Provision(string json)
         {
             var details = JsonConvert.DeserializeObject<Dictionary<string, string>>(json);
-            var instanceInfo = _manager.CreateInstance(details[RedisController.InstanceId]);
+            var instanceInfo = RedisController._manager.CreateInstance(details[RedisController.InstanceId]);
             return this.Request.CreateResponse(HttpStatusCode.Created, instanceInfo.connectionString);
         }
 
@@ -29,7 +29,7 @@ namespace redis.api.Controllers
             var details = JsonConvert.DeserializeObject<Dictionary<string, string>>(json);
             var response = this.Request.CreateResponse(HttpStatusCode.NoContent);
 
-            Manager.DeleteInstance(details[RedisController.InstanceId]);
+            RedisController._manager.DeleteInstance(details[RedisController.InstanceId]);
 
             return response;
         }
