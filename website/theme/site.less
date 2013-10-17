@@ -1,5 +1,28 @@
 @font-fancy: 	"Segoe UI Light", "Segoe UI";
 @font-standard: Arial, Helvetica, sans-serif;
 
+@htr-red: #d82a20;
+@htr-white: #fff;
+@htr-black: #333;
+@htr-green: #20d867;
+@htr-red: #d82a20;
+// @htr-blue: #0859a5;
+@htr-blue: #5ccbdb;
+@htr-grey: #ccc;
+@htr-grey-dark: #999;
+
+.rounded-corners(@radius: 3px) {
+    -moz-border-radius:     @radius;
+    -webkit-border-radius:  @radius;
+    border-radius:          @radius;
+}
+
+.group:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
 @import "_main";
 @import "_layout";
+@import "_button";
