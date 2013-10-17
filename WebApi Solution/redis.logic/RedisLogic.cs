@@ -1,9 +1,9 @@
 ﻿using System.Collections.Concurrent;
 using System.Threading;
 
-namespace HashtagRedis
+namespace redis.logic
 {
-    static class BusinessLogic
+    static class Manager
     {
         public static InstanceInfo CreateInstance(string instanceId)
         {
@@ -18,6 +18,7 @@ namespace HashtagRedis
             // TODO: Create process here...
             //info.processId = whatever;
             // TODO: Create connectionString
+            //info.connectionString = "redis://username:password@server:port/";
             _table.TryAdd(instanceId, info); // false means it already existed; should be impossible
             return info;
         }

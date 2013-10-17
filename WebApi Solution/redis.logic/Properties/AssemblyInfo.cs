@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("HashtagRedis.ProcessMonitor.Redis")]
+[assembly: AssemblyTitle("redis.logic")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("HashtagRedis.ProcessMonitor.Redis")]
+[assembly: AssemblyProduct("redis.logic")]
 [assembly: AssemblyCopyright("Copyright ©  2013")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("72ce4725-e8f1-4dc6-a20a-f80faf16036a")]
+[assembly: Guid("996f418f-db52-4212-b71e-d19332a7ac71")]
 
 // Version information for an assembly consists of the following four values:
 //

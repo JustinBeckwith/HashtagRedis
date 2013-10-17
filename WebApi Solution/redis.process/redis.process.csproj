@@ -4,16 +4,15 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{932359BF-C503-4AD5-9573-109935AACBD3}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <ProjectGuid>{B822820E-3839-47D5-81CB-E3151A1F4E64}</ProjectGuid>
+    <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>HashtagRedis.ProcessMonitor.CommandLine</RootNamespace>
-    <AssemblyName>HashtagRedis.ProcessMonitor.CommandLine</AssemblyName>
+    <RootNamespace>redis.process</RootNamespace>
+    <AssemblyName>redis.process</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -23,7 +22,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -41,17 +39,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RedisProcessInfo.cs" />
+    <Compile Include="RedisProcessManager.cs" />
+    <Compile Include="RedisStartDetails.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\HashtagRedis.ProcessMonitor.Framework\HashtagRedis.ProcessMonitor.Framework.csproj">
-      <Project>{9e1775a4-a0a9-44f2-a2fc-e253470c70f7}</Project>
-      <Name>HashtagRedis.ProcessMonitor.Framework</Name>
-    </ProjectReference>
+    <Content Include="redis-server.exe">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
