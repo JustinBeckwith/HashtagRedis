@@ -18,6 +18,7 @@ namespace HashtagRedis
             // TODO: Create process here...
             //info.processId = whatever;
             // TODO: Create connectionString
+            //info.connectionString = "redis://username:password@server:port/";
             _table.TryAdd(instanceId, info); // false means it already existed; should be impossible
             return info;
         }
