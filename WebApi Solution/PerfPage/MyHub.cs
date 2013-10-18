@@ -8,7 +8,7 @@ namespace PerfPage
     {
         private const int OPERATIONS = 2;
 
-        abstract class Harness
+        public abstract class Harness
         {
             public abstract string Name { get; }
             public abstract void Create(string data);
