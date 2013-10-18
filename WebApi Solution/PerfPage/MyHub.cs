@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNet.SignalR;
 using ServiceStack.Redis;
 using System.Diagnostics;
+using System.Linq;
 
 namespace PerfPage
 {
@@ -8,7 +9,7 @@ namespace PerfPage
     {
         private const int OPERATIONS = 2;
 
-        abstract class Harness
+        public abstract class Harness
         {
             public abstract string Name { get; }
             public abstract void Create(string data);
@@ -18,7 +19,12 @@ namespace PerfPage
 
         class RedisHarness : Harness
         {
-            private readonly RedisClient _client = new RedisClient("angler.redistogo.com", 9313, "553eee0ecf0a87501f5c67cb4302fc55");
+            private readonly RedisClient _client;
+
+            public RedisHarness(string host, int port, string password)
+            {
+                _client = new RedisClient(host, port /*, password*/);
+            }
 
             public override string Name
             {
@@ -41,9 +47,14 @@ namespace PerfPage
             }
         }
 
-        public void RedisTests()
+        public void RedisTests(string server)
         {
-            RunTests(new RedisHarness());
+            var parts = server.Split(':');
+            var host = parts.First().Trim();
+            int port;
+            int.TryParse(parts.Last().Trim(), out port);
+            var password = "redpolo";
+            RunTests(new RedisHarness(host, port, password));
         }
 
         public void OtherTests()
