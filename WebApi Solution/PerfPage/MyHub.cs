@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNet.SignalR;
+using PerfPage.Storage;
 using ServiceStack.Redis;
 using System.Diagnostics;
 using System.Linq;
@@ -59,7 +60,7 @@ namespace PerfPage
 
         public void OtherTests()
         {
-            //RunTests(new OtherHarness());
+            RunTests(new StorageController());
         }
 
         private void RunTests(Harness harness)
