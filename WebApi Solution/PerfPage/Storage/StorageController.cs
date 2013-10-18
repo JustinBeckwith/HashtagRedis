@@ -54,12 +54,20 @@ namespace PerfPage.Storage
         {
             TableOperation retrieveOperation = TableOperation.Retrieve<DummyType>(data, data);
             TableResult retrievedResult = table.Execute(retrieveOperation);
+            DummyType deleteEntity = (DummyType)retrievedResult.Result;
         }
 
         public override void Delete(string data)
         {
-            TableOperation retrieveOperation = TableOperation.Retrieve<DummyType>("Smith", "Ben");
+            TableOperation retrieveOperation = TableOperation.Retrieve<DummyType>(data, data);
             TableResult retrievedResult = table.Execute(retrieveOperation);
+            DummyType deleteEntity = (DummyType)retrievedResult.Result;
+
+            if (deleteEntity != null)
+            {
+                TableOperation deleteOperation = TableOperation.Delete(deleteEntity);
+                table.Execute(deleteOperation);
+            }
         }
     }
 }
