@@ -8,7 +8,7 @@ namespace PerfPage
 {
     public class MyHub : Hub
     {
-        private const int OPERATIONS = 2;
+        private const int OPERATIONS = 100;
 
         public abstract class Harness
         {
