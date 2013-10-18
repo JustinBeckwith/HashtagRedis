@@ -11,8 +11,6 @@ namespace PerfPage.Storage
 {
     public class DummyType : TableEntity
     {
-        public string data;
-
         public DummyType(string partitionKey, string rowKey)
         {
             this.PartitionKey = partitionKey;
@@ -45,7 +43,7 @@ namespace PerfPage.Storage
 
         public override void Create(string data) 
         {
-            var dummy = new DummyType() { data = data };
+            var dummy = new DummyType(data, data);
             TableOperation insertOperation = TableOperation.Insert(dummy);
             this.table.Execute(insertOperation);
         }
