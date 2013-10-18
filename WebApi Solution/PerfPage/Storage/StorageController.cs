@@ -24,7 +24,7 @@ namespace PerfPage.Storage
 
     public class StorageController : PerfPage.MyHub.Harness
     {
-        private const string TableName = "RedisTable";
+        private const string TableName = "TableStore";
         private CloudTable table;
 
         public StorageController()
